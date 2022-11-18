@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/Login-Screen/auth_screen.dart';
+import 'Screens/Auth Screens/auth_screen.dart';
 import 'routes.dart';
 
 

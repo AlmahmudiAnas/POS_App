@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Screens/Auth%20Screens/sign-up_screen.dart';
 
 import 'login_screen.dart';
 
@@ -86,8 +87,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: size.height * 0.1),
-              LoginScreen(),
+              logclick == true ? LoginScreen() : SignUpScreen(),
             ],
           ),
         ),
