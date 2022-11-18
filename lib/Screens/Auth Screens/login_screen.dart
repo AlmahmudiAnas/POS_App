@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
+import 'package:pos_application/Screens/OTP%20Screen/otp_screen.dart';
 import 'package:pos_application/Screens/homePage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -56,6 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Text(
             "Forget Password?",
             style: TextStyle(
+              color: Colors.blueAccent,
               fontWeight: FontWeight.w500,
             ),
           ),

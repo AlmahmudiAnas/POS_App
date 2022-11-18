@@ -124,12 +124,12 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  backgroundColor: Color.fromARGB(255, 245, 155, 174),
+                  backgroundColor: Color.fromARGB(255, 155, 194, 245),
                   radius: 25,
                   child: Icon(
                     Icons.contact_phone,
                     size: 30,
-                    color: Color.fromARGB(255, 255, 0, 157),
+                    color: Color.fromARGB(255, 69, 95, 214),
                   ),
                 ),
                 SizedBox(width: size.width * 0.05),
@@ -177,7 +177,7 @@ class HomePage extends StatelessWidget {
                 ),
                 SizedBox(width: size.width * 0.05),
                 Text(
-                  "Customers",
+                  "New Sales",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,

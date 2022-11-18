@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Screens/OTP%20Screen/otp_screen.dart';
 import 'package:pos_application/Screens/homePage.dart';
 
 import '../../My Widgets/my_button.dart';
@@ -18,6 +19,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmPasswordController = TextEditingController();
   bool _hidePassword = true;
+  String selectedValue = "LYD";
+  List<DropdownMenuItem<String>> items = [
+    DropdownMenuItem(child: Text("LYD"), value: "LYD"),
+    DropdownMenuItem(child: Text("USD"), value: "USD"),
+  ];
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -73,12 +79,37 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: "Enter Your Password",
             ),
           ),
+          SizedBox(height: size.height * 0.03),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Selecet Currency",
+                style: TextStyle(color: Colors.blue),
+              ),
+              DropdownButton(
+                items: items,
+                value: selectedValue,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value!;
+                    print(selectedValue);
+                    print(value);
+                  });
+                },
+              ),
+            ],
+          ),
           SizedBox(height: size.height * 0.07),
           MyButton(
             size: size,
             buttonText: "Login",
             onPressed: () {
-              Navigator.pushNamed(context, HomePage.routeName);
+              Navigator.pushNamed(context, OTPScreen.routeName);
             },
           ),
         ],
