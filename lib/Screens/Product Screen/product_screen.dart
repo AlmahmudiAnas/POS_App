@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/Itemslist.dart';
 import 'package:pos_application/My%20Widgets/divider.dart';
+import 'package:pos_application/Screens/homePage.dart';
 
 class ProductScreen extends StatelessWidget {
   ProductScreen({super.key});
@@ -61,13 +63,29 @@ class ProductScreen extends StatelessWidget {
                   thickness: 2,
                 ),
                 SizedBox(height: size.height * 0.012),
-                ItemsContainer(
-                  size: size,
-                  imageURL: "images/KH6----spark__9t__hei_--800x800.png",
-                  itemName: "Item 1",
-                  itemGroupPrice: "25.000",
-                  itemPrice: "15.00 \$",
+                ...List.generate(
+                  products.length,
+                  (index) {
+                    return ItemsContainer(
+                      size: size,
+                      products: products[index],
+                      press: () {
+                        // Navigator.pushNamed(
+                        //   context,
+                        //   HomePage.routeName,
+                        //   arguments: products[index],
+                        // );
+                      },
+                    );
+                  },
                 ),
+                //ItemsContainer(
+                //   size: size,
+                //   imageURL: "images/KH6----spark__9t__hei_--800x800.png",
+                //   itemName: "Item 1",
+                //   itemGroupPrice: "25.000",
+                //   itemPrice: "15.00 \$",
+                // ),
               ],
             ),
           ),

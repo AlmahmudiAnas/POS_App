@@ -1,42 +1,37 @@
 class Products {
-  final String imageURL, productName, productGroupPrice, productPrice;
+  final String imageURL, productName, productGroupPrice, productPrice, inStock;
   Products({
     required this.imageURL,
     required this.productName,
     required this.productGroupPrice,
     required this.productPrice,
+    required this.inStock,
   });
 }
 
 List<Products> products = [
   Products(
-    imageURL: "",
-    productName: "item 1",
-    productGroupPrice: "60",
-    productPrice: "120",
-  ),
+      imageURL: "images/KH6----spark__9t__hei_--800x800.png",
+      productName: "item 1",
+      productGroupPrice: "60",
+      productPrice: "120",
+      inStock: "60"),
   Products(
-    imageURL: "",
-    productName: "item 2",
-    productGroupPrice: "55",
-    productPrice: "130",
-  ),
+      imageURL: "images/3.png",
+      productName: "item 2",
+      productGroupPrice: "55",
+      productPrice: "130",
+      inStock: "50"),
   Products(
-    imageURL: "",
-    productName: "item 3",
-    productGroupPrice: "45",
-    productPrice: "168",
-  ),
+      imageURL: "images/green.png",
+      productName: "item 3",
+      productGroupPrice: "45",
+      productPrice: "168",
+      inStock: "100"),
   Products(
-    imageURL: "",
-    productName: "item 4",
-    productGroupPrice: "30",
-    productPrice: "50",
-  ),
-  Products(
-    imageURL: "",
-    productName: "item 5",
-    productGroupPrice: "50",
-    productPrice: "90",
-  ),
+      imageURL: "images/yin.png",
+      productName: "item 4",
+      productGroupPrice: "30",
+      productPrice: "50",
+      inStock: "90"),
 ];
