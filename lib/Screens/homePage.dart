@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -78,6 +79,7 @@ class HomePage extends StatelessWidget {
                 Color.fromARGB(255, 104, 49, 214),
                 Icons.menu_book_outlined,
                 "All sales",
+                () {},
               ),
               SizedBox(height: size.height * 0.03),
               SalesCard(
@@ -86,6 +88,9 @@ class HomePage extends StatelessWidget {
                 Color.fromARGB(255, 238, 82, 155),
                 Icons.savings,
                 "Products",
+                () {
+                  Navigator.pushNamed(context, ProductScreen.routeName);
+                },
               ),
               SizedBox(height: size.height * 0.03),
               Padding(
@@ -192,7 +197,7 @@ class HomePage extends StatelessWidget {
   }
 
   Container SalesCard(Size size, Color backgroundColor, Color iconColor,
-      IconData iconData, String text) {
+      IconData iconData, String text, VoidCallback onPressed) {
     return Container(
       width: size.width * 0.85,
       height: size.height * 0.10,
@@ -209,7 +214,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       child: MaterialButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

@@ -107,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           SizedBox(height: size.height * 0.07),
           MyButton(
             size: size,
-            buttonText: "Login",
+            buttonText: "Sign up",
             onPressed: () {
               Navigator.pushNamed(context, OTPScreen.routeName);
             },
