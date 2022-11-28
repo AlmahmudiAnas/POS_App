@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/My%20Widgets/my_button.dart';
 
 class NewProductScreen extends StatelessWidget {
   NewProductScreen({super.key});
@@ -6,6 +7,8 @@ class NewProductScreen extends StatelessWidget {
   TextEditingController _productName = TextEditingController();
   TextEditingController _productCode = TextEditingController();
   TextEditingController _productCate = TextEditingController();
+  TextEditingController _productStock = TextEditingController();
+  TextEditingController _productPrice = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +53,31 @@ class NewProductScreen extends StatelessWidget {
                     icon: Icon(Icons.camera),
                   ),
                 ],
+              ),
+              SizedBox(height: size.height * 0.02),
+              Row(
+                children: [
+                  Text("Price"),
+                  Spacer(),
+                  TextField(
+                    controller: _productPrice,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Text("Total stock"),
+                  Spacer(),
+                  TextField(
+                    controller: _productStock,
+                  ),
+                ],
+              ),
+              SizedBox(height: size.height * 0.02),
+              MyButton(
+                size: size,
+                buttonText: "Save",
+                onPressed: () {},
               ),
             ],
           ),
