@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:pos_application/Screens/Auth%20Screens/login_screen.dart';
 import 'package:pos_application/Screens/Auth%20Screens/sign-up_screen.dart';
 import 'package:pos_application/Screens/OTP%20Screen/otp_screen.dart';
+import 'package:pos_application/Screens/Product%20Screen/edit_product.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
 
@@ -18,4 +19,5 @@ final Map<String, WidgetBuilder> routes = {
   OTPScreen.routeName: (context) => OTPScreen(),
   ProductScreen.routeName: (context) => ProductScreen(),
   NewProductScreen.routeName:(context)=> NewProductScreen(),
+  EditProduct.routeName:(context) => EditProduct(),
 };
