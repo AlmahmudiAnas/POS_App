@@ -77,7 +77,9 @@ class NewProductScreen extends StatelessWidget {
               MyButton(
                 size: size,
                 buttonText: "Save",
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
             ],
           ),

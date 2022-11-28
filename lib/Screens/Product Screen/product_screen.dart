@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/Itemslist.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
+import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   ProductScreen({super.key});
@@ -26,7 +27,9 @@ class _ProductScreenState extends State<ProductScreen> {
           title: Text("Products"),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, NewProductScreen.routeName);
+              },
               icon: Icon(Icons.add),
             ),
           ],
