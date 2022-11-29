@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
 
 class EditProduct extends StatelessWidget {
