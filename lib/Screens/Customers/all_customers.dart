@@ -66,15 +66,13 @@ class CustomersScreen extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: size.height * 0.02),
-                              customerDemo[index].cDebt == 0
-                                  ? Container()
-                                  : Text(
-                                      "Debt ${customerDemo[index].cDebt}\$",
-                                      style: TextStyle(
-                                        color: Colors.redAccent,
-                                        fontSize: 15,
-                                      ),
-                                    ),
+                              Text(
+                                "Debt ${customerDemo[index].cDebt}\$",
+                                style: TextStyle(
+                                  color: Colors.redAccent,
+                                  fontSize: 15,
+                                ),
+                              ),
                               Row(
                                 children: [
                                   //add row of buttons
@@ -99,6 +97,7 @@ class CustomersScreen extends StatelessWidget {
                         ),
                       );
                     }
+                    
                   },
                   child: CustomerCard(
                     size: size,
