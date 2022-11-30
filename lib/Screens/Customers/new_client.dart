@@ -1,9 +1,14 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:pos_application/Modul/customer_list.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
 
 class NewClient extends StatelessWidget {
-  const NewClient({super.key});
+  NewClient({super.key});
   static String routeName = "New Client";
+  TextEditingController _customerName = TextEditingController();
+  TextEditingController _customerNumber = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +29,14 @@ class NewClient extends StatelessWidget {
             profilePicture(),
             SizedBox(height: size.height * 0.03),
             TextField(
+              controller: _customerName,
               decoration: InputDecoration(
                 label: Text("Customer name"),
               ),
             ),
             SizedBox(height: size.height * 0.03),
             TextField(
+              controller: _customerNumber,
               decoration: InputDecoration(
                 label: Text("Phone number"),
               ),
@@ -38,7 +45,16 @@ class NewClient extends StatelessWidget {
             MyButton(
               size: size,
               buttonText: "Save",
-              onPressed: () {},
+              onPressed: () {
+                customerDemo.add(
+                  Customer(
+                    imageURL: "image url",
+                    cName: _customerName.text,
+                    cDebt: 0,
+                    cPhoneNumber: int.parse(_customerNumber.text),
+                  ),
+                );
+              },
               color: Colors.blue,
               textColor: Colors.white,
             ),
