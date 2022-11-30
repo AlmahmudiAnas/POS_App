@@ -65,6 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
           MyButton(
             size: size,
             buttonText: "Login",
+            color:  Colors.white,
+            textColor: Colors.blue,
             onPressed: () {
               Navigator.pushNamed(context, HomePage.routeName);
             },

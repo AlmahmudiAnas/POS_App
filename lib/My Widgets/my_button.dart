@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  const MyButton({
+  MyButton({
     Key? key,
     required this.size,
     required this.buttonText,
     required this.onPressed,
+    required this.color,
+    required this.textColor,
   }) : super(key: key);
 
   final Size size;
   final String buttonText;
   final VoidCallback onPressed;
+  final color,textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class MyButton extends StatelessWidget {
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(25),
-          color: Colors.white,
+          color:color,
           boxShadow: [
             BoxShadow(
               color: Colors.blue.withOpacity(0.5),
@@ -39,7 +42,7 @@ class MyButton extends StatelessWidget {
             child: Text(
               buttonText,
               style: TextStyle(
-                color: Colors.blue,
+                color: textColor,
                 fontSize: 25,
                 //fontWeight: FontWeight.bold,
               ),

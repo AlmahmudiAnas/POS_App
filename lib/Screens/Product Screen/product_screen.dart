@@ -178,6 +178,8 @@ class _ProductScreenState extends State<ProductScreen> {
                                             MyButton(
                                               size: size,
                                               buttonText: "Edit product",
+                                              color: Colors.white,
+                                              textColor: Colors.blue,
                                               onPressed: () {},
                                             ),
                                             SizedBox(
@@ -185,6 +187,8 @@ class _ProductScreenState extends State<ProductScreen> {
                                             MyButton(
                                               size: size,
                                               buttonText: "Make Sale",
+                                              color: Colors.white,
+                                              textColor: Colors.blue,
                                               onPressed: () {},
                                             ),
                                           ],

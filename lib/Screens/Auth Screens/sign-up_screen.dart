@@ -108,6 +108,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
           MyButton(
             size: size,
             buttonText: "Sign up",
+            color: Colors.white,
+            textColor: Colors.blue,
             onPressed: () {
               Navigator.pushNamed(context, OTPScreen.routeName);
             },

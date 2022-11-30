@@ -61,6 +61,8 @@ class OTPScreen extends StatelessWidget {
               MyButton(
                 size: size,
                 buttonText: "Continue",
+                color: Colors.white,
+                textColor: Colors.blue,
                 onPressed: () {
                   Navigator.pushNamed(context, HomePage.routeName);
                 },

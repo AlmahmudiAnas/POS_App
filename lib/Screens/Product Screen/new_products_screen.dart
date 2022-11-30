@@ -77,6 +77,8 @@ class NewProductScreen extends StatelessWidget {
               MyButton(
                 size: size,
                 buttonText: "Save",
+                color: Colors.white,
+                textColor: Colors.blue,
                 onPressed: () {
                   Navigator.pop(context);
                 },

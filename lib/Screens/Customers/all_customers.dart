@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pos_application/Modul/customer_list.dart';
 import 'package:pos_application/My%20Widgets/customer_card.dart';
+import 'package:pos_application/My%20Widgets/my_button.dart';
 
 class CustomersScreen extends StatelessWidget {
   CustomersScreen({super.key});
@@ -34,49 +35,70 @@ class CustomersScreen extends StatelessWidget {
                 customerDemo.length,
                 (index) => MaterialButton(
                   onPressed: () {
-                    scaffoldKey.currentState!.showBottomSheet(
-                      (context) => Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage:
-                                  AssetImage(customerDemo[index].imageURL),
-                              radius: 3,
-                            ),
-                            SizedBox(width: size.width * 0.02),
-                            Text(
-                              customerDemo[index].cName,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                fontSize: 20,
+                    if (isBottomSheetShown) {
+                      Navigator.pop(context);
+                      isBottomSheetShown = false;
+                    } else {
+                      scaffoldKey.currentState!.showBottomSheet(
+                        (context) => Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            children: [
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(customerDemo[index].imageURL),
+                                radius: 3,
                               ),
-                            ),
-                            SizedBox(height: size.height * 0.02),
-                            Text(
-                              customerDemo[index].cPhoneNumber.toString(),
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15,
+                              SizedBox(width: size.width * 0.02),
+                              Text(
+                                customerDemo[index].cName,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 20,
+                                ),
                               ),
-                            ),
-                            SizedBox(height: size.height * 0.02),
-                            Text(
-                              "Debt ${customerDemo[index].cDebt.toString()}\$",
-                              style: TextStyle(
-                                color: Colors.redAccent,
-                                fontSize: 15,
+                              SizedBox(height: size.height * 0.02),
+                              Text(
+                                customerDemo[index].cPhoneNumber.toString(),
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ),
                               ),
-                            ),
-                            Row(
-                              children: [
-                                //add row of buttons
-                              ],
-                            )
-                          ],
+                              SizedBox(height: size.height * 0.02),
+                              customerDemo[index].cDebt == 0
+                                  ? Container()
+                                  : Text(
+                                      "Debt ${customerDemo[index].cDebt}\$",
+                                      style: TextStyle(
+                                        color: Colors.redAccent,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                              Row(
+                                children: [
+                                  //add row of buttons
+                                  MyButton(
+                                    size: size,
+                                    buttonText: "Edit",
+                                    onPressed: () {},
+                                    color: Colors.blueAccent,
+                                    textColor: Colors.blue,
+                                  ),
+                                  MyButton(
+                                    size: size,
+                                    buttonText: "View Orders",
+                                    onPressed: () {},
+                                    color: Colors.blue,
+                                    textColor: Colors.white,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    );
+                      );
+                    }
                   },
                   child: CustomerCard(
                     size: size,
