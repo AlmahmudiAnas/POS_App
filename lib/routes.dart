@@ -1,6 +1,7 @@
 import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:pos_application/Screens/All%20Sales/all_sales.dart';
 import 'package:pos_application/Screens/Auth%20Screens/login_screen.dart';
 import 'package:pos_application/Screens/Auth%20Screens/sign-up_screen.dart';
 import 'package:pos_application/Screens/Customers/all_customers.dart';
@@ -24,4 +25,5 @@ final Map<String, WidgetBuilder> routes = {
   EditProduct.routeName: (context) => EditProduct(),
   CustomersScreen.routeName: (context) => CustomersScreen(),
   NewClient.routeName: (context) => NewClient(),
+  AllSales.routeName:(context) => AllSales(),
 };

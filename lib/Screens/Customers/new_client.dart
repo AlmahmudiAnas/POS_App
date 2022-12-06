@@ -48,7 +48,7 @@ class NewClient extends StatelessWidget {
               onPressed: () {
                 customerDemo.add(
                   Customer(
-                    imageURL: "image url",
+                    imageURL: "images/blank-profile-photo.jpeg",
                     cName: _customerName.text,
                     cDebt: 0,
                     cPhoneNumber: int.parse(_customerNumber.text),
