@@ -19,71 +19,89 @@ class NewProductScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Center(
-          child: Column(
-            children: [
-              CircleAvatar(
-                radius: 50,
-                backgroundColor: Colors.grey,
-              ),
-              SizedBox(height: size.height * 0.02),
-              TextField(
-                controller: _productName,
-                decoration: InputDecoration(
-                  label: Text('Product Name'),
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Colors.grey,
                 ),
-              ),
-              SizedBox(height: size.height * 0.02),
-              TextField(
-                controller: _productCate,
-                decoration: InputDecoration(
-                  label: Text('Category'),
+                SizedBox(height: size.height * 0.02),
+                TextField(
+                  controller: _productName,
+                  decoration: InputDecoration(
+                    label: Text('Product Name'),
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              SizedBox(height: size.height * 0.02),
-              Row(
-                children: [
-                  TextField(
-                    controller: _productCode,
-                    decoration: InputDecoration(
-                      label: Text('Product Code'),
+                SizedBox(height: size.height * 0.02),
+                TextField(
+                  controller: _productCate,
+                  decoration: InputDecoration(
+                    label: Text('Category'),
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                SizedBox(height: size.height * 0.02),
+                Row(
+                  children: [
+                    Flexible(
+                      child: TextField(
+                        controller: _productCode,
+                        decoration: InputDecoration(
+                          label: Text('Product Code'),
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
                     ),
-                  ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.camera),
-                  ),
-                ],
-              ),
-              SizedBox(height: size.height * 0.02),
-              Row(
-                children: [
-                  Text("Price"),
-                  Spacer(),
-                  TextField(
-                    controller: _productPrice,
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("Total stock"),
-                  Spacer(),
-                  TextField(
-                    controller: _productStock,
-                  ),
-                ],
-              ),
-              SizedBox(height: size.height * 0.02),
-              MyButton(
-                size: size,
-                buttonText: "Save",
-                color: Colors.white,
-                textColor: Colors.blue,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.camera),
+                    ),
+                  ],
+                ),
+                SizedBox(height: size.height * 0.02),
+                Row(
+                  children: [
+                    Text("Price"),
+                    Spacer(),
+                    Flexible(
+                      child: TextField(
+                        controller: _productPrice,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Text("Total stock"),
+                    Spacer(),
+                    Flexible(
+                      child: TextField(
+                        controller: _productStock,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: size.height * 0.02),
+                MyButton(
+                  size: size,
+                  buttonText: "Save",
+                  color: Colors.white,
+                  textColor: Colors.blue,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

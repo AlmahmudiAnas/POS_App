@@ -50,15 +50,15 @@ class _AllSalesState extends State<AllSales> {
                     },
                   ),
                   SizedBox(width: size.width * 0.1),
-                  DropdownButton(
-                    items: datesList,
-                    value: selectedDateValue,
-                    onChanged: (newValue) {
-                      setState(() {
-                        selectedDateValue = newValue!;
-                      });
-                    },
-                  ),
+                  // DropdownButton(
+                  //   items: datesList,
+                  //   value: selectedDateValue,
+                  //   onChanged: (newValue) {
+                  //     setState(() {
+                  //       selectedDateValue = newValue!;
+                  //     });
+                  //   },
+                  // ),
                 ],
               ),
             ),

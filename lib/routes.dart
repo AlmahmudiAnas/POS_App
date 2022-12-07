@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:pos_application/Screens/All%20Sales/all_sales.dart';
 import 'package:pos_application/Screens/Auth%20Screens/login_screen.dart';

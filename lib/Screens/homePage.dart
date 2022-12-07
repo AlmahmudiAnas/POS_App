@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Screens/All%20Sales/all_sales.dart';
+import 'package:pos_application/Screens/Customers/all_customers.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -79,7 +81,9 @@ class HomePage extends StatelessWidget {
                 Color.fromARGB(255, 104, 49, 214),
                 Icons.menu_book_outlined,
                 "All sales",
-                () {},
+                () {
+                  Navigator.pushNamed(context, AllSales.routeName);
+                },
               ),
               SizedBox(height: size.height * 0.03),
               SalesCard(
@@ -95,7 +99,9 @@ class HomePage extends StatelessWidget {
               SizedBox(height: size.height * 0.03),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
-                child: TwoButtons(size),
+                child: TwoButtons(size, () {
+                  Navigator.pushNamed(context, CustomersScreen.routeName);
+                }),
               )
             ],
           ),
@@ -104,7 +110,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Row TwoButtons(Size size) {
+  Row TwoButtons(Size size, VoidCallback customerPress) {
     return Row(
       children: [
         Container(
@@ -123,7 +129,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           child: MaterialButton(
-            onPressed: () {},
+            onPressed: customerPress,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

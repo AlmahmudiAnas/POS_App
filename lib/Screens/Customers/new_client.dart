@@ -54,6 +54,7 @@ class NewClient extends StatelessWidget {
                     cPhoneNumber: int.parse(_customerNumber.text),
                   ),
                 );
+                Navigator.pop(context);
               },
               color: Colors.blue,
               textColor: Colors.white,
