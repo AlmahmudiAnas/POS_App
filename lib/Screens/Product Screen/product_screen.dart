@@ -81,6 +81,120 @@ class _ProductScreenState extends State<ProductScreen> {
                     return ItemsContainer(
                       size: size,
                       products: products[index],
+                      stockOnPress: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                contentPadding: EdgeInsets.only(top: 10),
+                                title: Text(
+                                  "Edit Stock",
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                  ),
+                                ),
+                                content: Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Container(
+                                    height: size.height * 0.25,
+                                    child: Center(
+                                      child: SingleChildScrollView(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              products[index].productName,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.grey,
+                                                fontSize: 20,
+                                              ),
+                                            ),
+                                            SizedBox(
+                                                height: size.height * 0.02),
+                                            Row(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                IconButton(
+                                                  icon: Icon(Icons.remove),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      products[index].inStock--;
+                                                    });
+                                                  },
+                                                  iconSize: 20,
+                                                ),
+                                                SizedBox(
+                                                    width: size.width * 0.05),
+                                                Text(
+                                                  "${products[index].inStock}",
+                                                  style: TextStyle(
+                                                    fontSize: 25,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                    width: size.width * 0.05),
+                                                IconButton(
+                                                  icon: Icon(Icons.add),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      products[index].inStock++;
+                                                    });
+                                                  },
+                                                  iconSize: 20,
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                                height: size.height * 0.05),
+                                            Row(
+                                              children: [
+                                                CustomeButton(
+                                                  size: size,
+                                                  backgroundColor:
+                                                      Color.fromARGB(
+                                                          255, 133, 178, 255),
+                                                  press: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  text: "Cancel",
+                                                  textColor: Color.fromARGB(
+                                                      255, 0, 75, 136),
+                                                  height: size.height * 0.08,
+                                                  width: size.width * 0.3,
+                                                ),
+                                                SizedBox(
+                                                    width: size.width * 0.01),
+                                                CustomeButton(
+                                                  size: size,
+                                                  backgroundColor: Colors.blue,
+                                                  press: () {},
+                                                  text: "Save",
+                                                  textColor: Colors.white,
+                                                  height: size.height * 0.08,
+                                                  width: size.width * 0.3,
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            });
+                      },
                       press: () {
                         showModalBottomSheet<void>(
                           context: context,
@@ -133,7 +247,9 @@ class _ProductScreenState extends State<ProductScreen> {
                                                 size,
                                                 index,
                                                 "Stock",
-                                                products[index].inStock,
+                                                products[index]
+                                                    .inStock
+                                                    .toString(),
                                                 true),
                                             SizedBox(
                                                 height: size.height * 0.02),

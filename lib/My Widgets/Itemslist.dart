@@ -9,10 +9,11 @@ class ItemsContainer extends StatelessWidget {
     required this.size,
     required this.products,
     required this.press,
+    required this.stockOnPress,
   }) : super(key: key);
 
   final Size size;
-  VoidCallback press;
+  VoidCallback press, stockOnPress;
   Products products;
 
   @override
@@ -73,10 +74,13 @@ class ItemsContainer extends StatelessWidget {
               ),
               MyDivider(size: size),
               SizedBox(width: size.width * 0.05),
-              Text(
-                products.inStock,
-                style: TextStyle(
-                  color: Colors.orange,
+              GestureDetector(
+                onTap: stockOnPress,
+                child: Text(
+                  products.inStock.toString(),
+                  style: TextStyle(
+                    color: Colors.orange,
+                  ),
                 ),
               ),
             ],
