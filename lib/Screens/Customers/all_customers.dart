@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pos_application/Modul/customer_list.dart';
+import 'package:pos_application/My%20Widgets/custome_button.dart';
 import 'package:pos_application/My%20Widgets/customer_card.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
+import 'package:pos_application/Screens/Customers/edit_customer.dart';
 import 'package:pos_application/Screens/Customers/new_client.dart';
 
 class CustomersScreen extends StatefulWidget {
@@ -46,68 +48,88 @@ class _CustomersScreenState extends State<CustomersScreen> {
                   children: [
                     MaterialButton(
                       onPressed: () {
-                        if (isBottomSheetShown) {
-                          Navigator.pop(context);
-                          isBottomSheetShown = false;
-                        } else {
-                          scaffoldKey.currentState?.showBottomSheet(
-                            (context) => Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Column(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundImage: AssetImage(
-                                        customerDemo[index].imageURL),
-                                    radius: 3,
-                                  ),
-                                  SizedBox(width: size.width * 0.02),
-                                  Text(
-                                    customerDemo[index].cName,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 20,
+                        showModalBottomSheet<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                              height: size.height * 0.4,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    CircleAvatar(
+                                      backgroundImage: AssetImage(
+                                          customerDemo[index].imageURL),
+                                      radius: 50,
                                     ),
-                                  ),
-                                  SizedBox(height: size.height * 0.02),
-                                  Text(
-                                    customerDemo[index].cPhoneNumber.toString(),
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  SizedBox(height: size.height * 0.02),
-                                  Text(
-                                    "Debt ${customerDemo[index].cDebt}\$",
-                                    style: TextStyle(
-                                      color: Colors.redAccent,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      //add row of buttons
-                                      MyButton(
-                                        size: size,
-                                        buttonText: "Edit",
-                                        onPressed: () {},
-                                        color: Colors.blueAccent,
-                                        textColor: Colors.blue,
+                                    SizedBox(width: size.width * 0.02),
+                                    Text(
+                                      customerDemo[index].cName,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 20,
                                       ),
-                                      MyButton(
-                                        size: size,
-                                        buttonText: "View Orders",
-                                        onPressed: () {},
-                                        color: Colors.blue,
-                                        textColor: Colors.white,
+                                    ),
+                                    SizedBox(height: size.height * 0.02),
+                                    Text(
+                                      customerDemo[index]
+                                          .cPhoneNumber
+                                          .toString(),
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                        fontSize: 15,
                                       ),
-                                    ],
-                                  ),
-                                ],
+                                    ),
+                                    SizedBox(height: size.height * 0.02),
+                                    Text(
+                                      "Debt ${customerDemo[index].cDebt}\$",
+                                      style: TextStyle(
+                                        color: Colors.redAccent,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                    SizedBox(height: size.height * 0.02),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        //add row of buttons
+                                        CustomeButton(
+                                          size: size,
+                                          text: "Edit",
+                                          press: () {
+                                            Navigator.pushNamed(
+                                                context, EditCustomer.routeName,
+                                                arguments: customerDemo[index]);
+                                          },
+                                          backgroundColor: Color.fromARGB(
+                                              255, 109, 162, 252),
+                                          textColor: Colors.white,
+                                          height: size.height * 0.07,
+                                          width: size.width * 0.4,
+                                        ),
+                                        SizedBox(width: size.width * 0.02),
+                                        CustomeButton(
+                                          size: size,
+                                          text: "View Order",
+                                          textColor: Colors.white,
+                                          backgroundColor: Colors.blue,
+                                          press: () {},
+                                          height: size.height * 0.07,
+                                          width: size.width * 0.4,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          );
-                        }
+                            );
+                          },
+                        );
                       },
                       child: CustomerCard(
                         size: size,

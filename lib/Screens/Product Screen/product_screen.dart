@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/Itemslist.dart';
+import 'package:pos_application/My%20Widgets/custome_button.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 
@@ -81,126 +82,98 @@ class _ProductScreenState extends State<ProductScreen> {
                       size: size,
                       products: products[index],
                       press: () {
-                        if (isBottomSheetShown) {
-                          Navigator.pop(context);
-                          isBottomSheetShown = false;
-                        } else {
-                          scaffoldKey.currentState!.showBottomSheet(
-                            (context) => Container(
-                              width: double.infinity,
+                        showModalBottomSheet<void>(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
                               height: size.height * 0.5,
-                              color: Colors.red,
-                              child: SingleChildScrollView(
+                              //color: Colors.red,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
                                 child: Column(
                                   children: [
-                                    Padding(padding: EdgeInsets.all(20)),
                                     Row(
                                       children: [
-                                        Image.asset(products[index].imageURL),
-                                        SizedBox(width: size.width * 0.1),
+                                        Image.asset(
+                                          products[index].imageURL,
+                                          scale: 8,
+                                        ),
+                                        SizedBox(width: size.width * 0.02),
                                         Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               products[index].productName,
                                               style: TextStyle(
-                                                fontSize: 22,
+                                                fontSize: 27,
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
                                             SizedBox(
-                                                height: size.height * 0.01),
+                                                height: size.height * 0.02),
                                             Text(
                                               products[index].catagory,
                                               style: TextStyle(
-                                                fontSize: 15,
                                                 color: Colors.grey,
+                                                fontSize: 18,
                                               ),
                                             ),
                                             SizedBox(
                                                 height: size.height * 0.02),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  "Code:",
-                                                  style: TextStyle(
-                                                    color: Colors.grey,
-                                                  ),
-                                                ),
-                                                Spacer(),
-                                                Text(
-                                                  products[index].code,
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                            rowProductDetails(
+                                                size,
+                                                index,
+                                                "Code",
+                                                products[index].code,
+                                                false),
                                             SizedBox(
                                                 height: size.height * 0.02),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  "In stock:",
-                                                  style: TextStyle(
-                                                    color: Colors.grey,
-                                                  ),
-                                                ),
-                                                Spacer(),
-                                                Text(
-                                                  products[index].inStock,
-                                                  style: TextStyle(
-                                                    color: Colors.orange,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
+                                            rowProductDetails(
+                                                size,
+                                                index,
+                                                "Stock",
+                                                products[index].inStock,
+                                                true),
                                             SizedBox(
                                                 height: size.height * 0.02),
-                                            Row(
-                                              children: [
-                                                Text(
-                                                  "Price:",
-                                                  style: TextStyle(
-                                                    color: Colors.grey,
-                                                  ),
-                                                ),
-                                                Spacer(),
-                                                Text(
-                                                  products[index].productPrice,
-                                                  style: TextStyle(
-                                                    color: Colors.black,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                            SizedBox(
-                                                height: size.height * 0.02),
-                                            MyButton(
-                                              size: size,
-                                              buttonText: "Edit product",
-                                              color: Colors.white,
-                                              textColor: Colors.blue,
-                                              onPressed: () {},
-                                            ),
-                                            SizedBox(
-                                                height: size.height * 0.02),
-                                            MyButton(
-                                              size: size,
-                                              buttonText: "Make Sale",
-                                              color: Colors.white,
-                                              textColor: Colors.blue,
-                                              onPressed: () {},
-                                            ),
+                                            rowProductDetails(
+                                                size,
+                                                index,
+                                                "Price",
+                                                products[index].productPrice,
+                                                false),
                                           ],
                                         ),
                                       ],
                                     ),
+                                    SizedBox(height: size.height * 0.03),
+                                    CustomeButton(
+                                      size: size,
+                                      backgroundColor:
+                                          Color.fromARGB(255, 116, 167, 255),
+                                      press: () {},
+                                      text: "Edit Product",
+                                      textColor: Colors.white,
+                                      height: size.height * 0.07,
+                                      width: size.width * 0.7,
+                                    ),
+                                    SizedBox(height: size.height * 0.03),
+                                    CustomeButton(
+                                      size: size,
+                                      backgroundColor: Colors.blue,
+                                      press: () {},
+                                      text: "Make Sale",
+                                      textColor: Colors.white,
+                                      height: size.height * 0.07,
+                                      width: size.width * 0.7,
+                                    ),
                                   ],
                                 ),
                               ),
-                            ),
-                          );
-                        }
+                            );
+                          },
+                        );
                       },
                     );
                   },
@@ -209,6 +182,49 @@ class _ProductScreenState extends State<ProductScreen> {
             ),
           ),
         ),
+      ),
+    );
+  }
+
+  Container rowProductDetails(
+    Size size,
+    int index,
+    String title,
+    String text,
+    bool stockSign,
+  ) {
+    return Container(
+      width: size.width * 0.6,
+      //color: Colors.red,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            "$title:",
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 15,
+            ),
+          ),
+          // SizedBox(
+          //     width:
+          //         size.width * 0.3),
+          stockSign == true
+              ? Text(
+                  "$text",
+                  style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 15,
+                  ),
+                )
+              : Text(
+                  "$text",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                  ),
+                ),
+        ],
       ),
     );
   }

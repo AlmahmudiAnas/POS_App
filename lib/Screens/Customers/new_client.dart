@@ -80,7 +80,7 @@ class NewClient extends StatelessWidget {
             right: -12,
             child: SizedBox(
               height: 46,
-              width: 46,
+              width: 50,
               child: MaterialButton(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50),

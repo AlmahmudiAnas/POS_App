@@ -34,7 +34,7 @@ List<Products> products = [
     productPrice: "130",
     inStock: "50",
     catagory: "phone",
-    code: "phone1",
+    code: "phone2",
   ),
   Products(
     imageURL: "images/green.png",
@@ -43,7 +43,7 @@ List<Products> products = [
     productPrice: "168",
     inStock: "100",
     catagory: "phone",
-    code: "phone1",
+    code: "phone3",
   ),
   Products(
     imageURL: "images/yin.png",
@@ -52,6 +52,6 @@ List<Products> products = [
     productPrice: "50",
     inStock: "90",
     catagory: "phone",
-    code: "phone1",
+    code: "phone4",
   ),
 ];
