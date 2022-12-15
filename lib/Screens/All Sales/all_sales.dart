@@ -78,9 +78,6 @@ class _AllSalesState extends State<AllSales> {
                 ],
               ),
             ),
-            // dateTotalSales(),
-            // InvoiceCard(size: size),
-            // dateTotalSales()
           ],
         ),
       ),

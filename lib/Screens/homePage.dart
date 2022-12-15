@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pos_application/Screens/All%20Sales/all_sales.dart';
 import 'package:pos_application/Screens/Customers/all_customers.dart';
+import 'package:pos_application/Screens/New%20Sales/new_sales.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -99,9 +100,15 @@ class HomePage extends StatelessWidget {
               SizedBox(height: size.height * 0.03),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 28),
-                child: TwoButtons(size, () {
-                  Navigator.pushNamed(context, CustomersScreen.routeName);
-                }),
+                child: TwoButtons(
+                  size,
+                  () {
+                    Navigator.pushNamed(context, CustomersScreen.routeName);
+                  },
+                  () {
+                    Navigator.pushNamed(context, NewSale.routeName);
+                  },
+                ),
               )
             ],
           ),
@@ -110,7 +117,8 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Row TwoButtons(Size size, VoidCallback customerPress) {
+  Row TwoButtons(
+      Size size, VoidCallback customerPress, VoidCallback newSalePress) {
     return Row(
       children: [
         Container(
@@ -172,7 +180,7 @@ class HomePage extends StatelessWidget {
             ],
           ),
           child: MaterialButton(
-            onPressed: () {},
+            onPressed: newSalePress,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,

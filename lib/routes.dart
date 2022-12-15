@@ -5,6 +5,7 @@ import 'package:pos_application/Screens/Auth%20Screens/sign-up_screen.dart';
 import 'package:pos_application/Screens/Customers/all_customers.dart';
 import 'package:pos_application/Screens/Customers/edit_customer.dart';
 import 'package:pos_application/Screens/Customers/new_client.dart';
+import 'package:pos_application/Screens/New%20Sales/new_sales.dart';
 import 'package:pos_application/Screens/OTP%20Screen/otp_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/edit_product.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
@@ -25,5 +26,6 @@ final Map<String, WidgetBuilder> routes = {
   CustomersScreen.routeName: (context) => CustomersScreen(),
   NewClient.routeName: (context) => NewClient(),
   AllSales.routeName:(context) => AllSales(),
-  EditCustomer.routeName:(context) => EditCustomer()
+  EditCustomer.routeName:(context) => EditCustomer(),
+  NewSale.routeName:(context) => NewSale(),
 };
