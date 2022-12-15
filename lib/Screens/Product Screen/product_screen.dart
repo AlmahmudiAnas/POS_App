@@ -185,7 +185,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                                   width: size.width * 0.3,
                                                 ),
                                               ],
-                                            )
+                                            ),
                                           ],
                                         ),
                                       ),
