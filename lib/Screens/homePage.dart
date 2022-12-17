@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pos_application/Screens/All%20Sales/all_sales.dart';
 import 'package:pos_application/Screens/Customers/all_customers.dart';
 import 'package:pos_application/Screens/New%20Sales/new_sales.dart';
+import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -14,12 +15,6 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 233, 233, 233),
       appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.menu),
-          ),
-        ],
         title: Center(
           child: Text(
             "POS",
@@ -27,6 +22,151 @@ class HomePage extends StatelessWidget {
               fontWeight: FontWeight.w900,
             ),
           ),
+        ),
+      ),
+      drawer: Drawer(
+        child: Stack(
+          children: [
+            ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Colors.blue,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        backgroundImage:
+                            AssetImage("images/blank-profile-photo.jpeg"),
+                        radius: 40,
+                      ),
+                      SizedBox(height: size.height * 0.01),
+                      Text(
+                        "Anas Almahmudi",
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(height: size.height * 0.01),
+                      Text(
+                        "+218920356023",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color.fromARGB(255, 108, 108, 108),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                ListTile(
+                  title: Text('All sales'),
+                  onTap: () {
+                    Navigator.pushNamed(context, AllSales.routeName);
+                  },
+                  leading: Icon(
+                    Icons.menu_book_outlined,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text('New sale'),
+                  onTap: () {
+                    Navigator.pushNamed(context, NewSale.routeName);
+                  },
+                  leading: Icon(
+                    Icons.shopping_bag,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text('Products'),
+                  onTap: () {},
+                  leading: Icon(
+                    Icons.savings,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text('Add product'),
+                  onTap: () {
+                    Navigator.pushNamed(context, NewProductScreen.routeName);
+                  },
+                  leading: Icon(
+                    Icons.add_box_outlined,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text('Statistics'),
+                  onTap: () {},
+                  leading: Icon(
+                    Icons.admin_panel_settings,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text('Customers'),
+                  onTap: () {
+                    Navigator.pushNamed(context, CustomersScreen.routeName);
+                  },
+                  leading: Icon(
+                    Icons.person,
+                    color: Colors.blue,
+                  ),
+                ),
+                Divider(
+                  thickness: 1,
+                  height: 8,
+                ),
+                ListTile(
+                  title: Text('Categories'),
+                  onTap: () {},
+                  leading: Icon(
+                    Icons.category,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text('Settings'),
+                  onTap: () {},
+                  leading: Icon(
+                    Icons.settings,
+                    color: Colors.blue,
+                  ),
+                ),
+                Divider(
+                  thickness: 1,
+                  height: 8,
+                ),
+                ListTile(
+                  title: Text('Support'),
+                  onTap: () {},
+                  leading: Icon(
+                    Icons.support,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Text(
+                  'Developed By Anas Almahmudi',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
       ),
       body: SafeArea(

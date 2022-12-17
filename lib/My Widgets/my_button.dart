@@ -13,7 +13,7 @@ class MyButton extends StatelessWidget {
   final Size size;
   final String buttonText;
   final VoidCallback onPressed;
-  final color,textColor;
+  final color, textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,8 @@ class MyButton extends StatelessWidget {
             color: Colors.blue,
             width: 1.5,
           ),
-          borderRadius: BorderRadius.circular(25),
-          color:color,
+          borderRadius: BorderRadius.circular(20),
+          color: color,
           boxShadow: [
             BoxShadow(
               color: Colors.blue.withOpacity(0.5),
