@@ -10,6 +10,7 @@ import 'package:pos_application/Screens/OTP%20Screen/otp_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/edit_product.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
+import 'package:pos_application/Screens/Settings/settings.dart';
 
 import 'Screens/Auth Screens/auth_screen.dart';
 import 'Screens/homePage.dart';
@@ -25,7 +26,8 @@ final Map<String, WidgetBuilder> routes = {
   EditProduct.routeName: (context) => EditProduct(),
   CustomersScreen.routeName: (context) => CustomersScreen(),
   NewClient.routeName: (context) => NewClient(),
-  AllSales.routeName:(context) => AllSales(),
-  EditCustomer.routeName:(context) => EditCustomer(),
-  NewSale.routeName:(context) => NewSale(),
+  AllSales.routeName: (context) => AllSales(),
+  EditCustomer.routeName: (context) => EditCustomer(),
+  NewSale.routeName: (context) => NewSale(),
+  Settings.routeName: (context) => Settings(),
 };

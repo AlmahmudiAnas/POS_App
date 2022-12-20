@@ -85,7 +85,9 @@ class HomePage extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text('Products'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, ProductScreen.routeName);
+                  },
                   leading: Icon(
                     Icons.savings,
                     color: Colors.blue,

@@ -3,11 +3,12 @@ import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/Itemslist.dart';
 import 'package:pos_application/My%20Widgets/custome_button.dart';
 import 'package:pos_application/My%20Widgets/my_button.dart';
+import 'package:pos_application/Screens/Product%20Screen/edit_product.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   ProductScreen({super.key});
-  static String routeName = "Product Screen";
+  static String routeName = "ProductScreen";
 
   @override
   State<ProductScreen> createState() => _ProductScreenState();
@@ -268,7 +269,10 @@ class _ProductScreenState extends State<ProductScreen> {
                                       size: size,
                                       backgroundColor:
                                           Color.fromARGB(255, 116, 167, 255),
-                                      press: () {},
+                                      press: () {
+                                        Navigator.pushNamed(
+                                            context, EditProduct.routeName);
+                                      },
                                       text: "Edit Product",
                                       textColor: Colors.white,
                                       height: size.height * 0.07,

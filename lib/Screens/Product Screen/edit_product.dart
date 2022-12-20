@@ -79,7 +79,7 @@ class EditProduct extends StatelessWidget {
                 size: size,
                 buttonText: "Save",
                 color: Colors.white,
-                                              textColor: Colors.blue,
+                textColor: Colors.blue,
                 onPressed: () {
                   Navigator.pop(context);
                 },

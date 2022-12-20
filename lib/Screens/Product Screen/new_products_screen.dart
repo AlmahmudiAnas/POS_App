@@ -3,7 +3,7 @@ import 'package:pos_application/My%20Widgets/my_button.dart';
 
 class NewProductScreen extends StatelessWidget {
   NewProductScreen({super.key});
-  static String routeName = "New Product Screen";
+  static String routeName = "NewProduct Screen";
   TextEditingController _productName = TextEditingController();
   TextEditingController _productCode = TextEditingController();
   TextEditingController _productCate = TextEditingController();
