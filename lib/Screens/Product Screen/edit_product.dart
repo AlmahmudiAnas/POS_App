@@ -19,72 +19,36 @@ class EditProduct extends StatelessWidget {
         title: Text("Edit Product"),
       ),
       body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              CircleAvatar(
-                radius: 50,
-                backgroundColor: Colors.grey,
-              ),
-              SizedBox(height: size.height * 0.02),
-              TextField(
-                controller: _productName,
-                decoration: InputDecoration(
-                  label: Text('Product Name'),
+        child: Padding(
+          padding: EdgeInsets.all(20),
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(height: size.height * 0.04),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage:
+                      AssetImage('images/blank-profile-photo.jpeg'),
                 ),
-              ),
-              SizedBox(height: size.height * 0.02),
-              TextField(
-                controller: _productCate,
-                decoration: InputDecoration(
-                  label: Text('Category'),
+                SizedBox(height: size.height * 0.05),
+                TextField(
+                  controller: _productName,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text('Product Name'),
+                  ),
                 ),
-              ),
-              SizedBox(height: size.height * 0.02),
-              Row(
-                children: [
-                  TextField(
-                    controller: _productCode,
-                    decoration: InputDecoration(
-                      label: Text('Product Code'),
-                    ),
+                SizedBox(height: size.height * 0.05),
+                TextField(
+                  controller: _productCate,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    label: Text('Category'),
                   ),
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.camera),
-                  ),
-                ],
-              ),
-              SizedBox(height: size.height * 0.02),
-              Row(
-                children: [
-                  Text("Price"),
-                  Spacer(),
-                  TextField(
-                    controller: _productPrice,
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("Total stock"),
-                  Spacer(),
-                  TextField(
-                    controller: _productStock,
-                  ),
-                ],
-              ),
-              SizedBox(height: size.height * 0.02),
-              MyButton(
-                size: size,
-                buttonText: "Save",
-                color: Colors.white,
-                textColor: Colors.blue,
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
+                ),
+                SizedBox(height: size.height * 0.05),
+              ],
+            ),
           ),
         ),
       ),

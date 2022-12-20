@@ -1,3 +1,4 @@
+import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/Itemslist.dart';
@@ -265,19 +266,29 @@ class _ProductScreenState extends State<ProductScreen> {
                                       ],
                                     ),
                                     SizedBox(height: size.height * 0.03),
-                                    CustomeButton(
+                                    MyButton(
                                       size: size,
-                                      backgroundColor:
-                                          Color.fromARGB(255, 116, 167, 255),
-                                      press: () {
-                                        Navigator.pushNamed(
-                                            context, EditProduct.routeName);
+                                      buttonText: 'Edit product',
+                                      onPressed: () {
+                                        Navigator.of(context).popAndPushNamed(
+                                            EditProduct.routeName);
                                       },
-                                      text: "Edit Product",
+                                      color: Color.fromARGB(255, 116, 167, 255),
                                       textColor: Colors.white,
-                                      height: size.height * 0.07,
-                                      width: size.width * 0.7,
                                     ),
+                                    // CustomeButton(
+                                    //   size: size,
+                                    //   backgroundColor:
+                                    //       Color.fromARGB(255, 116, 167, 255),
+                                    //   press: () {
+                                    //     Navigator.pushNamed(
+                                    //         context, EditProduct.routeName);
+                                    //   },
+                                    //   text: "Edit Product",
+                                    //   textColor: Colors.white,
+                                    //   height: size.height * 0.07,
+                                    //   width: size.width * 0.7,
+                                    // ),
                                     SizedBox(height: size.height * 0.03),
                                     CustomeButton(
                                       size: size,
