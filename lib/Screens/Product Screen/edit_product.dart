@@ -38,7 +38,7 @@ class EditProduct extends StatelessWidget {
                     label: Text('Product Name'),
                   ),
                 ),
-                SizedBox(height: size.height * 0.05),
+                SizedBox(height: size.height * 0.03),
                 TextField(
                   controller: _productCate,
                   decoration: InputDecoration(
@@ -46,7 +46,58 @@ class EditProduct extends StatelessWidget {
                     label: Text('Category'),
                   ),
                 ),
-                SizedBox(height: size.height * 0.05),
+                SizedBox(height: size.height * 0.03),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _productCode,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          label: Text('Product Code'),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: size.width * 0.03),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.camera_alt_outlined),
+                    ),
+                  ],
+                ),
+                SizedBox(height: size.height * 0.02),
+                Row(
+                  children: [
+                    Text("Price"),
+                    Spacer(),
+                    Container(
+                      width: size.width * 0.2,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                        controller: _productPrice,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: size.height * 0.02),
+                Row(
+                  children: [
+                    Text("Total stock"),
+                    Spacer(),
+                    Container(
+                      width: size.width * 0.2,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                        controller: _productStock,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

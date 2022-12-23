@@ -4,6 +4,7 @@ import 'package:pos_application/Screens/Customers/all_customers.dart';
 import 'package:pos_application/Screens/New%20Sales/new_sales.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
+import 'package:pos_application/Screens/Settings/settings.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -135,7 +136,9 @@ class HomePage extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text('Settings'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, Settings.routeName);
+                  },
                   leading: Icon(
                     Icons.settings,
                     color: Colors.blue,

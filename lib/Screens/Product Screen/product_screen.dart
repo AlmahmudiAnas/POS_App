@@ -1,4 +1,3 @@
-import 'package:adaptive_action_sheet/adaptive_action_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:pos_application/Modul/products_list.dart';
 import 'package:pos_application/My%20Widgets/Itemslist.dart';
@@ -281,24 +280,26 @@ class _ProductScreenState extends State<ProductScreen> {
                                     //   backgroundColor:
                                     //       Color.fromARGB(255, 116, 167, 255),
                                     //   press: () {
-                                    //     Navigator.pushNamed(
-                                    //         context, EditProduct.routeName);
+                                    //     Navigator.of(context).popAndPushNamed(
+                                    //         EditProduct.routeName);
                                     //   },
                                     //   text: "Edit Product",
                                     //   textColor: Colors.white,
                                     //   height: size.height * 0.07,
                                     //   width: size.width * 0.7,
                                     // ),
+
+                                    // custome button not working why?!!!!
                                     SizedBox(height: size.height * 0.03),
-                                    CustomeButton(
-                                      size: size,
-                                      backgroundColor: Colors.blue,
-                                      press: () {},
-                                      text: "Make Sale",
-                                      textColor: Colors.white,
-                                      height: size.height * 0.07,
-                                      width: size.width * 0.7,
-                                    ),
+                                    // CustomeButton(
+                                    //   size: size,
+                                    //   backgroundColor: Colors.blue,
+                                    //   press: () {},
+                                    //   text: "Make Sale",
+                                    //   textColor: Colors.white,
+                                    //   height: size.height * 0.07,
+                                    //   width: size.width * 0.7,
+                                    // ),
                                   ],
                                 ),
                               ),
