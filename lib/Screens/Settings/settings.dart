@@ -52,65 +52,205 @@ import 'package:flutter/material.dart';
 import 'package:pos_application/My%20Widgets/custom_shap.dart';
 
 class Settings extends StatelessWidget {
-  const Settings({super.key});
+  Settings({super.key});
   static String routeName = "Settings Screen";
+  bool notificationSwitch = true;
+  bool darkModeSwitch = false;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 223, 223, 223),
-      appBar: TriangleAppBar(),
-      // appBar: AppBar(
-      //   leading: Container(),
-      //   toolbarHeight: size.height * 0.26,
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0,
-      //   flexibleSpace: ClipPath(
-      //     clipper: Customshape(),
-      //     child: Container(
-      //       height: size.height * 0.6,
-      //       width: MediaQuery.of(context).size.width,
-      //       color: Colors.blue,
-      //       child: Center(
-      //         child: CircleAvatar(
-      //           radius: 50,
-      //           backgroundImage: AssetImage('images/blank-profile-photo.jpeg'),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
+      //appBar: TriangleAppBar(),
+      appBar: AppBar(
+        leading: Container(),
+        toolbarHeight: size.height * 0.26,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        flexibleSpace: ClipPath(
+          clipper: Customshape(),
+          child: Container(
+            height: size.height * 0.6,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.blue,
+            child: Center(
+              child: CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('images/blank-profile-photo.jpeg'),
+              ),
+            ),
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SettingsFirstCardList(
-              size: size,
-              firstText: "Name",
-              secondText: 'Mr. Anas',
-              isThereIcon: true,
-              icon: Icons.edit,
+            // SettingsFirstCardList(
+            //   size: size,
+            //   firstText: "Name",
+            //   secondText: 'Mr. Anas',
+            //   isThereIcon: true,
+            //   icon: Icons.edit,
+            // ),
+            // SizedBox(height: size.height * 0.002),
+            // SettingsFirstCardList(
+            //   size: size,
+            //   firstText: 'Business name',
+            //   icon: Icons.edit,
+            //   isThereIcon: true,
+            //   secondText: 'Software developer',
+            // ),
+            // SizedBox(height: size.height * 0.002),
+            // SettingsFirstCardList(
+            //   size: size,
+            //   firstText: 'Phone',
+            //   icon: Icons.edit,
+            //   isThereIcon: false,
+            //   secondText: '+218916877297',
+            // ),
+            // SizedBox(height: size.height * 0.05),
+            // ListView(
+            //   children: [
+            //     Container(
+            //       decoration: BoxDecoration(
+            //         color: Colors.white,
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //       child: ListTile(
+            //         title: Text('Notification'),
+            //         trailing: Switch(
+            //           value: notificationSwitch,
+            //           onChanged: (value) {
+            //             notificationSwitch = value;
+            //           },
+            //         ),
+            //       ),
+            //     ),
+            //     Container(
+            //       decoration: BoxDecoration(
+            //         color: Colors.white,
+            //         borderRadius: BorderRadius.circular(15),
+            //       ),
+            //       child: ListTile(
+            //         title: Text('Dark mode'),
+            //         trailing: Switch(
+            //           value: darkModeSwitch,
+            //           onChanged: (value) {
+            //             darkModeSwitch = value;
+            //           },
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            Text(
+              'Account',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
             ),
-            SizedBox(height: size.height * 0.002),
-            SettingsFirstCardList(
-              size: size,
-              firstText: 'Business name',
-              icon: Icons.edit,
-              isThereIcon: true,
-              secondText: 'Software developer',
+            SizedBox(height: size.height * 0.005),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Anas Almahmudi",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(height: size.height * 0.01),
+                        Text(
+                          "anesmedia263@gmail.com",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            SizedBox(height: size.height * 0.002),
-            SettingsFirstCardList(
-              size: size,
-              firstText: 'Phone',
-              icon: Icons.edit,
-              isThereIcon: false,
-              secondText: '+218916877297',
+            SizedBox(height: size.height * 0.03),
+            Text(
+              'App settings',
+              style: TextStyle(
+                fontSize: 23,
+                color: Colors.black,
+              ),
             ),
-            SizedBox(height: size.height * 0.05),
+            SizedBox(height: size.height * 0.005),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
+                    appSettingsRow('Notifications'),
+                    Divider(
+                      thickness: 2,
+                      height: 10,
+                    ),
+                    appSettingsRow('Dark mode'),
+                    Divider(
+                      thickness: 2,
+                      height: 10,
+                    ),
+                    appSettingsRow('Language'),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
+    );
+  }
+
+  Row appSettingsRow(String text) {
+    return Row(
+      children: [
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.black,
+          ),
+        ),
+        Spacer(),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            Icons.arrow_forward_ios,
+          ),
+        ),
+      ],
     );
   }
 }
@@ -178,43 +318,4 @@ class SettingsFirstCardList extends StatelessWidget {
       ],
     );
   }
-}
-
-class TriangleAppBar extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 120,
-      child: ClipPath(
-        clipper: TriangleClipper(),
-        child: Container(
-          color: Colors.blue,
-          child: Center(
-            child: Text(
-              'Triangle App Bar',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TriangleClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width / 2, size.height);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(TriangleClipper oldClipper) => false;
 }

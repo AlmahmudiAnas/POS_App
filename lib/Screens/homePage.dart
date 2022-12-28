@@ -137,7 +137,7 @@ class HomePage extends StatelessWidget {
                 ListTile(
                   title: Text('Settings'),
                   onTap: () {
-                    Navigator.pushNamed(context, SettingsScreen.routeName);
+                    Navigator.pushNamed(context, Settings.routeName);
                   },
                   leading: Icon(
                     Icons.settings,
