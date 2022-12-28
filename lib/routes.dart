@@ -29,5 +29,5 @@ final Map<String, WidgetBuilder> routes = {
   AllSales.routeName: (context) => AllSales(),
   EditCustomer.routeName: (context) => EditCustomer(),
   NewSale.routeName: (context) => NewSale(),
-  Settings.routeName: (context) => Settings(),
+  SettingsScreen.routeName: (context) => SettingsScreen(),
 };
