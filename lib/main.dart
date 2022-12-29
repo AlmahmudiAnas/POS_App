@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pos_application/Screens/Splash%20Screen/splash_screen.dart';
 
 import 'Screens/Auth Screens/auth_screen.dart';
 import 'routes.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: AuthScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: routes,
     );
   }

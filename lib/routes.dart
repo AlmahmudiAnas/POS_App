@@ -11,11 +11,13 @@ import 'package:pos_application/Screens/Product%20Screen/edit_product.dart';
 import 'package:pos_application/Screens/Product%20Screen/new_products_screen.dart';
 import 'package:pos_application/Screens/Product%20Screen/product_screen.dart';
 import 'package:pos_application/Screens/Settings/settings.dart';
+import 'package:pos_application/Screens/Splash%20Screen/splash_screen.dart';
 
 import 'Screens/Auth Screens/auth_screen.dart';
 import 'Screens/homePage.dart';
 
 final Map<String, WidgetBuilder> routes = {
+  SplashScreen.routeName:(context) => SplashScreen(),
   HomePage.routeName: (context) => HomePage(),
   AuthScreen.routeName: (context) => AuthScreen(),
   LoginScreen.routeName: (context) => LoginScreen(),

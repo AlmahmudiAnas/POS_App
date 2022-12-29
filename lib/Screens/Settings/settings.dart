@@ -50,6 +50,7 @@
 // }
 import 'package:flutter/material.dart';
 import 'package:pos_application/My%20Widgets/custom_shap.dart';
+import 'package:pos_application/My%20Widgets/my_button.dart';
 
 class Settings extends StatelessWidget {
   Settings({super.key});
@@ -84,173 +85,186 @@ class Settings extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // SettingsFirstCardList(
-            //   size: size,
-            //   firstText: "Name",
-            //   secondText: 'Mr. Anas',
-            //   isThereIcon: true,
-            //   icon: Icons.edit,
-            // ),
-            // SizedBox(height: size.height * 0.002),
-            // SettingsFirstCardList(
-            //   size: size,
-            //   firstText: 'Business name',
-            //   icon: Icons.edit,
-            //   isThereIcon: true,
-            //   secondText: 'Software developer',
-            // ),
-            // SizedBox(height: size.height * 0.002),
-            // SettingsFirstCardList(
-            //   size: size,
-            //   firstText: 'Phone',
-            //   icon: Icons.edit,
-            //   isThereIcon: false,
-            //   secondText: '+218916877297',
-            // ),
-            // SizedBox(height: size.height * 0.05),
-            // ListView(
-            //   children: [
-            //     Container(
-            //       decoration: BoxDecoration(
-            //         color: Colors.white,
-            //         borderRadius: BorderRadius.circular(15),
-            //       ),
-            //       child: ListTile(
-            //         title: Text('Notification'),
-            //         trailing: Switch(
-            //           value: notificationSwitch,
-            //           onChanged: (value) {
-            //             notificationSwitch = value;
-            //           },
-            //         ),
-            //       ),
-            //     ),
-            //     Container(
-            //       decoration: BoxDecoration(
-            //         color: Colors.white,
-            //         borderRadius: BorderRadius.circular(15),
-            //       ),
-            //       child: ListTile(
-            //         title: Text('Dark mode'),
-            //         trailing: Switch(
-            //           value: darkModeSwitch,
-            //           onChanged: (value) {
-            //             darkModeSwitch = value;
-            //           },
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            Text(
-              'Account',
-              style: TextStyle(
-                fontSize: 23,
-                color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // SettingsFirstCardList(
+              //   size: size,
+              //   firstText: "Name",
+              //   secondText: 'Mr. Anas',
+              //   isThereIcon: true,
+              //   icon: Icons.edit,
+              // ),
+              // SizedBox(height: size.height * 0.002),
+              // SettingsFirstCardList(
+              //   size: size,
+              //   firstText: 'Business name',
+              //   icon: Icons.edit,
+              //   isThereIcon: true,
+              //   secondText: 'Software developer',
+              // ),
+              // SizedBox(height: size.height * 0.002),
+              // SettingsFirstCardList(
+              //   size: size,
+              //   firstText: 'Phone',
+              //   icon: Icons.edit,
+              //   isThereIcon: false,
+              //   secondText: '+218916877297',
+              // ),
+              // SizedBox(height: size.height * 0.05),
+              // ListView(
+              //   children: [
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         color: Colors.white,
+              //         borderRadius: BorderRadius.circular(15),
+              //       ),
+              //       child: ListTile(
+              //         title: Text('Notification'),
+              //         trailing: Switch(
+              //           value: notificationSwitch,
+              //           onChanged: (value) {
+              //             notificationSwitch = value;
+              //           },
+              //         ),
+              //       ),
+              //     ),
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         color: Colors.white,
+              //         borderRadius: BorderRadius.circular(15),
+              //       ),
+              //       child: ListTile(
+              //         title: Text('Dark mode'),
+              //         trailing: Switch(
+              //           value: darkModeSwitch,
+              //           onChanged: (value) {
+              //             darkModeSwitch = value;
+              //           },
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              Text(
+                'Account',
+                style: TextStyle(
+                  fontSize: 23,
+                  color: Colors.black,
+                ),
               ),
-            ),
-            SizedBox(height: size.height * 0.005),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+              SizedBox(height: size.height * 0.01),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
                       children: [
-                        Text(
-                          "Anas Almahmudi",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Anas Almahmudi",
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                              ),
+                            ),
+                            SizedBox(height: size.height * 0.003),
+                            Text(
+                              "anesmedia263@gmail.com",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
                         ),
-                        SizedBox(height: size.height * 0.01),
-                        Text(
-                          "anesmedia263@gmail.com",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.grey,
+                        Spacer(),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.arrow_forward_ios,
                           ),
                         ),
                       ],
                     ),
-                    Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.arrow_forward_ios,
+                  ),
+                ),
+              ),
+              SizedBox(height: size.height * 0.03),
+              Text(
+                'App settings',
+                style: TextStyle(
+                  fontSize: 23,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: size.height * 0.005),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Column(
+                    children: [
+                      // appSettingsRow('Notifications', () {
+                      //   print('Notification pressed');
+                      // }),
+                      ListTile(
+                        title: Text('Notifications'),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        onTap: () {},
                       ),
-                    ),
-                  ],
+                      Divider(
+                        thickness: 2,
+                        height: 10,
+                      ),
+                      ListTile(
+                        title: Text('Dark mode'),
+                        trailing: Icon(Icons.arrow_forward_ios),
+                        onTap: () {},
+                      ),
+                      Divider(
+                        thickness: 2,
+                        height: 10,
+                      ),
+                      ListTile(
+                        title: Text('Language'),
+                        trailing: Icon(
+                          (Icons.arrow_forward_ios),
+                        ),
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: size.height * 0.03),
-            Text(
-              'App settings',
-              style: TextStyle(
-                fontSize: 23,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(height: size.height * 0.005),
-            Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  children: [
-                    appSettingsRow('Notifications'),
-                    Divider(
-                      thickness: 2,
-                      height: 10,
-                    ),
-                    appSettingsRow('Dark mode'),
-                    Divider(
-                      thickness: 2,
-                      height: 10,
-                    ),
-                    appSettingsRow('Language'),
-                  ],
-                ),
-              ),
-            ),
-          ],
+              SizedBox(height: size.height * 0.01),
+              Center(child: Text("@Copy rights")),
+              SizedBox(height: size.height * 0.1),
+              MyButton(
+                  size: size,
+                  buttonText: "Log out",
+                  onPressed: () {},
+                  color: Colors.blue,
+                  textColor: Colors.white)
+            ],
+          ),
         ),
       ),
-    );
-  }
-
-  Row appSettingsRow(String text) {
-    return Row(
-      children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-          ),
-        ),
-        Spacer(),
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.arrow_forward_ios,
-          ),
-        ),
-      ],
     );
   }
 }
